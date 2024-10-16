@@ -1,3 +1,16 @@
+/**
+ * ฟังก์ชัน submitLogin ใช้สำหรับส่งข้อมูลการล็อกอินไปยัง API ของมหาวิทยาลัยธรรมศาสตร์
+ * และแสดงผลลัพธ์ที่ได้จากการตรวจสอบข้อมูลการล็อกอิน
+ *
+ * @function submitLogin
+ * @description
+ * 1. ดึงค่าจากฟอร์ม username และ password
+ * 2. เรียกใช้ API จาก TU เพื่อทำการตรวจสอบข้อมูลการล็อกอิน
+ * 3. ตรวจสอบผลลัพธ์จาก API และแสดงข้อความที่เหมาะสมในหน้าเว็บ
+ * 4. ถ้าข้อมูลการล็อกอินถูกต้อง จะแสดงข้อมูลเพิ่มเติมเกี่ยวกับผู้ใช้
+ * 5. ถ้าข้อมูลการล็อกอินไม่ถูกต้อง จะแสดงข้อความแจ้งเตือน
+ * 6. ถ้ามีข้อผิดพลาดในการเรียกใช้ API จะแสดงข้อความแจ้งเตือน
+ */
 function submitLogin() {
     const username = document.getElementById('username').value; // ดึงค่าจากฟอร์ม username
     const password = document.getElementById('password').value; // ดึงค่าจากฟอร์ม password
@@ -31,7 +44,7 @@ function submitLogin() {
             // ตรวจสอบประเภทนักศึกษา หรือบุคลากร
             let resultMessage = '';
             if (data.type === 'student') {
-                // ถ้าเป็นนักศึกษา แสดง Type, displayname_en, Faculty, และ Department
+                // ถ้าเป็นนักศึกษา แสดง Type, displayname_th, Faculty, และ Department
                 resultMessage = `
                     Type: ${data.type}
                     Display Name: ${data.displayname_th}
@@ -39,7 +52,7 @@ function submitLogin() {
                     Department: ${data.department}
                 `;
             } else if (data.type === 'employee') {
-                // ถ้าเป็นบุคลากร แสดง Type, displayname_en, Organization, และ Department
+                // ถ้าเป็นบุคลากร แสดง Type, displayname_th, Organization, และ Department
                 resultMessage = `
                     Type: ${data.type}
                     Display Name: ${data.displayname_th}
