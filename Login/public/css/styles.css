@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* การตั้งค่าพื้นฐานของ body */
 body {
   font-family: Arial, sans-serif;
   min-height: 100vh;
@@ -15,6 +16,7 @@ body {
   overflow: hidden;
 }
 
+/* การตั้งค่าของ container */
 .container {
   width: 100%;
   max-width: 400px;
@@ -22,6 +24,7 @@ body {
   z-index: 1;
 }
 
+/* การตั้งค่าของ form-container */
 .form-container {
   background-color: rgba(26, 0, 0, 0.7);
   border-radius: 8px;
@@ -30,6 +33,7 @@ body {
   backdrop-filter: blur(10px);
 }
 
+/* การตั้งค่าของ h2 */
 h2 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -42,6 +46,7 @@ h2 {
   animation: pulse 2s infinite;
 }
 
+/* การตั้งค่าของ label */
 label {
   display: block;
   color: #f0f025;
@@ -51,6 +56,7 @@ label {
   text-shadow: 0 0 5px #ffff00, 0 0 20px #ffff00;
 }
 
+/* การตั้งค่าของ input */
 input {
   width: 100%;
   padding: 0.5rem 0.75rem;
@@ -62,16 +68,19 @@ input {
   transition: all 0.3s;
 }
 
+/* การตั้งค่าของ input เมื่อ focus */
 input:focus {
   outline: none;
   border-color: #ffff00;
   box-shadow: 0 0 5px #ff0000, 0 0 20px #ffff00;
 }
 
+/* การตั้งค่าของ placeholder ใน input */
 input::placeholder {
   color: rgba(255, 255, 0, 0.5);
 }
 
+/* การตั้งค่าของ button */
 button {
   background: linear-gradient(to right, #ff0000, #ffff00);
   border: none;
@@ -85,11 +94,13 @@ button {
   animation: pulse 2s infinite;
 }
 
+/* การตั้งค่าของ button เมื่อ hover */
 button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px #ff0000, 0 0 20px #ffff00;
 }
 
+/* การตั้งค่าของ a */
 a {
   color: #ffff00;
   text-decoration: none;
@@ -99,16 +110,19 @@ a {
   text-shadow: 0 0 5px #ffff00, 0 0 20px #ffff00;
 }
 
+/* การตั้งค่าของ a เมื่อ hover */
 a:hover {
   color: #ff0000;
 }
 
+/* การตั้งค่าของ flex */
 .flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* การตั้งค่าของ copyright */
 .copyright {
   text-align: center;
   font-size: 0.75rem;
@@ -116,6 +130,7 @@ a:hover {
   margin-top: 1rem;
 }
 
+/* การตั้งค่าของ neon-line */
 .neon-line {
   position: absolute;
   height: 1px;
@@ -124,6 +139,7 @@ a:hover {
   animation: neon-line 8s linear infinite;
 }
 
+/* การตั้งค่าของ neon-particle */
 .neon-particle {
   position: absolute;
   border-radius: 50%;
@@ -131,6 +147,7 @@ a:hover {
   animation: float 3s ease-in-out infinite;
 }
 
+/* การตั้งค่าของ color-shift */
 .color-shift {
   position: absolute;
   inset: 0;
@@ -138,6 +155,7 @@ a:hover {
   animation: color-shift 10s linear infinite;
 }
 
+/* การตั้งค่าของ mouse-glow */
 #mouse-glow {
   position: absolute;
   width: 250px;
@@ -148,26 +166,31 @@ a:hover {
   transform: translate(-50%, -50%);
 }
 
+/* การตั้งค่าของ keyframes pulse */
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
 }
 
+/* การตั้งค่าของ keyframes neon-line */
 @keyframes neon-line {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
 }
 
+/* การตั้งค่าของ keyframes float */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
 }
 
+/* การตั้งค่าของ keyframes color-shift */
 @keyframes color-shift {
   0%, 100% { filter: hue-rotate(0deg); }
   50% { filter: hue-rotate(60deg); }
 }
 
+/* การตั้งค่าของ error-message */
 #error-message {
   display: none;
   color: #e54d4d;
@@ -182,6 +205,7 @@ a:hover {
   animation: neon-pulse 1.5s infinite alternate;
 }
 
+/* การตั้งค่าของ keyframes neon-pulse */
 @keyframes neon-pulse {
   from {
       text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
@@ -193,6 +217,7 @@ a:hover {
   }
 }
 
+/* การตั้งค่าของ message */
 #message {
   font-size: 16px;
   font-weight: bold;
@@ -203,6 +228,7 @@ a:hover {
   transition: all 0.3s;
 }
 
+/* การตั้งค่าของ success */
 .success {
   color: #00FF00; /* ข้อความสีเขียว */
   border: 2px solid #00FF00; /* กรอบสีเขียว */
@@ -211,6 +237,7 @@ a:hover {
   box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00; /* เงาสีเขียว */
 }
 
+/* การตั้งค่าของ fail */
 .fail {
   color: lightcoral; /* ข้อความสีแดง */
   border: 2px solid lightcoral; /* กรอบสีแดง */
