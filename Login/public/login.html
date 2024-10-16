@@ -1,91 +1,113 @@
+<!-- 
+ไฟล์: /Users/jedan/Desktop/Academic/2nd_Year_Sem_1/CS261/Midterm/Coding/Login_assign/CS261-Login-Page/Login/public/login.html
+-->
+
+<!-- ประกาศเอกสาร HTML -->
 <!DOCTYPE html>
+
+<!-- ส่วนหัวของเอกสาร -->
 <html lang="en">
-
 <head>
+    <!-- กำหนดชุดอักขระ -->
     <meta charset="UTF-8">
+    <!-- กำหนดการแสดงผลบนอุปกรณ์ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ชื่อเรื่องของหน้าเว็บ -->
     <title>TU Login</title>
+    <!-- ลิงก์ไปยังไฟล์ CSS -->
     <link rel="stylesheet" href="/css/styles.css">
-
 </head>
 
+<!-- ส่วนเนื้อหาของเอกสาร -->
 <body>
+    <!-- ส่วนของการเปลี่ยนสีพื้นหลัง -->
     <div class="color-shift"></div>
+    <!-- ส่วนของแสงที่ตามเมาส์ -->
     <div id="mouse-glow"></div>
+    <!-- ส่วนของคอนเทนเนอร์หลัก -->
     <div class="container">
+        <!-- ส่วนของฟอร์มล็อกอิน -->
         <div class="form-container">
+            <!-- โลโก้ของมหาวิทยาลัยธรรมศาสตร์ -->
             <img src="/img/Thammasat_main_logo.png" alt="TU Logo" class="logo" style="display: block; margin-bottom: 2cm; margin: auto; width: 100%; max-width: 100px;">
+            <!-- หัวข้อของฟอร์มล็อกอิน -->
             <h2 style="text-align: center; margin-top: 12px;">TU Login</h2>
+            <!-- ฟอร์มล็อกอิน -->
             <form id="login-form">
+                <!-- ช่องกรอกชื่อผู้ใช้ -->
                 <div>
                     <label for="username">Username</label>
                     <input type="text" id="username" placeholder="Username" required>
                 </div>
+                <!-- ช่องกรอกรหัสผ่าน -->
                 <div>
                     <label for="password">Password</label>
                     <input type="password" id="password" placeholder="••••••••" required>
                 </div>
+                <!-- ปุ่มล็อกอินและลิงก์สำหรับลืมรหัสผ่าน -->
                 <div class="flex">
                     <button type="submit">Sign In</button>
                     <a href="https://page.line.me/pib5088f?openQrModal=true">Forgot Password?</a>
                 </div>
             </form>
+            <!-- ส่วนแสดงข้อความผิดพลาด -->
             <div id="error-message"></div>
+            <!-- ส่วนแสดงข้อความทั่วไป -->
             <div id="message"></div>
         </div>
     </div>
-            <script src="/js/script.js"></script>
-            <script>
-                // Create neon lines
-                for (let i = 0; i < 5; i++) {
-                    const line = document.createElement('div');
-                    line.className = 'neon-line';
-                    line.style.top = `${20 * i}%`;
-                    line.style.animationDelay = `${i * 0.5}s`;
-                    document.body.appendChild(line);
-                }
 
-                // Create floating particles
-                for (let i = 0; i < 20; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'neon-particle';
-                    particle.style.width = `${Math.random() * 4 + 1}px`;
-                    particle.style.height = particle.style.width;
-                    particle.style.top = `${Math.random() * 100}%`;
-                    particle.style.left = `${Math.random() * 100}%`;
-                    particle.style.backgroundColor = Math.random() > 0.5 ? '#ff0000' : '#ffff00';
-                    particle.style.boxShadow = `0 0 ${Math.random() * 10 + 5}px ${particle.style.backgroundColor}`;
-                    particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
-                    document.body.appendChild(particle);
-                }
+    <!-- ลิงก์ไปยังไฟล์ JavaScript -->
+    <script src="/js/script.js"></script>
+    <script>
+        // สร้างเส้นนีออน
+        for (let i = 0; i < 5; i++) {
+            const line = document.createElement('div');
+            line.className = 'neon-line';
+            line.style.top = `${20 * i}%`;
+            line.style.animationDelay = `${i * 0.5}s`;
+            document.body.appendChild(line);
+        }
 
-                // Mouse glow effect
-                const mouseGlow = document.getElementById('mouse-glow');
-                document.addEventListener('mousemove', (e) => {
-                    mouseGlow.style.left = `${e.clientX}px`;
-                    mouseGlow.style.top = `${e.clientY}px`;
-                });
+        // สร้างอนุภาคนีออน
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'neon-particle';
+            particle.style.width = `${Math.random() * 4 + 1}px`;
+            particle.style.height = particle.style.width;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.backgroundColor = Math.random() > 0.5 ? '#ff0000' : '#ffff00';
+            particle.style.boxShadow = `0 0 ${Math.random() * 10 + 5}px ${particle.style.backgroundColor}`;
+            particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
+            document.body.appendChild(particle);
+        }
 
-                // Form submission
-                document.getElementById('login-form').addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    submitLogin();
-                });
+        // เอฟเฟกต์แสงตามเมาส์
+        const mouseGlow = document.getElementById('mouse-glow');
+        document.addEventListener('mousemove', (e) => {
+            mouseGlow.style.left = `${e.clientX}px`;
+            mouseGlow.style.top = `${e.clientY}px`;
+        });
 
-                // Function to display error message
-                function showErrorMessage(message) {
-                    const errorElement = document.getElementById('error-message');
-                    errorElement.textContent = message;
-                    errorElement.style.display = 'block';
-                }
+        // การส่งฟอร์ม
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitLogin();
+        });
 
-                // Function to hide error message
-                function hideErrorMessage() {
-                    const errorElement = document.getElementById('error-message');
-                    errorElement.style.display = 'none';
-                }
+        // ฟังก์ชันแสดงข้อความผิดพลาด
+        function showErrorMessage(message) {
+            const errorElement = document.getElementById('error-message');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
 
-            </script>
+        // ฟังก์ชันซ่อนข้อความผิดพลาด
+        function hideErrorMessage() {
+            const errorElement = document.getElementById('error-message');
+            errorElement.style.display = 'none';
+        }
+    </script>
 </body>
-
 </html>
