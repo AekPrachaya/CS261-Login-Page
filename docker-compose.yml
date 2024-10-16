@@ -4,7 +4,7 @@ services:
   node-app:
     build:
       context: .  # ใช้โฟลเดอร์ปัจจุบันเป็น context สำหรับการสร้าง
-      dockerfile: DockerContainer_NodeJS.dockerfile  # ตั้งชื่อ Dockerfile ที่คุณใช้
+      dockerfile: DockerContainer_NodeJS.dockerfile  # ตั้งชื่อ Dockerfile 
     ports:
       - "3000:3000"  # แผนที่พอร์ตภายนอกกับพอร์ตภายใน
     environment:
