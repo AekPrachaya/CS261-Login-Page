@@ -1,0 +1,16 @@
+version: '3.8'  # ใช้เวอร์ชันของ Docker Compose
+
+services:
+  node-app:
+    build:
+      context: .  # ใช้โฟลเดอร์ปัจจุบันเป็น context สำหรับการสร้าง
+      dockerfile: DockerContainer_NodeJS.dockerfile  # ตั้งชื่อ Dockerfile ที่คุณใช้
+    ports:
+      - "3000:3000"  # แผนที่พอร์ตภายนอกกับพอร์ตภายใน
+    environment:
+      NODE_ENV: production  # ตั้งค่า environment variables
+    networks:
+      - mynetwork  # เชื่อมต่อกับเครือข่าย
+
+networks:
+  mynetwork:  # สร้างเครือข่าย
