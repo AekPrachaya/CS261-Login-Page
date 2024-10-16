@@ -216,33 +216,3 @@ a:hover {
   border: 2px solid lightcoral; /* กรอบสีแดง */
   background-color: rgba(255, 0, 0, 0.1); /* พื้นหลังสีแดงอ่อน */
 }
-
-.popup {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  background-color: rgba(0, 255, 0, 0.1); /* พื้นหลังสีเขียวอ่อน */
-  border: 2px solid #00FF00; /* กรอบสีเขียว */
-  color: #00FF00; /* ข้อความสีเขียว */
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: center;
-  box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00; /* เงาสีเขียว */
-  text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00; /* เรืองแสงนีออน */
-  display: none; /* ซ่อนป๊อปอัปในตอนแรก */
-  z-index: 1000; /* ให้แสดงอยู่ด้านหน้า */
-  transition: opacity 0.5s ease-in-out; /* เพิ่ม transition */
-}
-
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(-10px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
